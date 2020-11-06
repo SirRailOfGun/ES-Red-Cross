@@ -27,7 +27,7 @@ mission "Rush Hospital [0]"
 	passengers 1 .9
 	to offer
 		random < 90
-	require "triage" 1
+	require "triage" 
 	source
 		government "Republic" "Free Worlds" "Syndicate" "Neutral" "Independent"
 	destination
@@ -47,7 +47,7 @@ mission "Patients [0]"
 	passengers 1 10 .9
 	to offer
 		random < 75
-	require "medical facility" 1
+	require "medical facility" 
 	source
 		government "Republic" "Free Worlds" "Syndicate" "Neutral" "Independent"
 	destination
@@ -67,7 +67,7 @@ mission "Quarantine [0]"
 	passengers 1 5 .9
 	to offer
 		random < 75
-	require "quarantine" 1
+	require "quarantine" 
 	source
 		government "Republic" "Free Worlds" "Syndicate" "Neutral" "Independent"
 	destination
