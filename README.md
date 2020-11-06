@@ -1,6 +1,7 @@
 # ES-Red-Cross
 A mod for Endless Sky based around hospitals and such.
 
+ - Notes on contained data files
 
 Hosptial-based outfits: a series of outfits that enable the player to take more sensitive medical jobs
 
