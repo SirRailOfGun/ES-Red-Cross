@@ -37,7 +37,7 @@ mission "Rush Hospital [0]"
 		dialog phrase "generic medical on visit"
 	on complete
 		payment
-		payment 45000 600
+		payment 45000 900
 		dialog phrase "generic medical delivery payment"
 		
 mission "Rush Hospital [1]"
@@ -60,7 +60,7 @@ mission "Rush Hospital [1]"
 		dialog phrase "generic medical on visit"
 	on complete
 		payment
-		payment 45000 600
+		payment 45000 900
 		dialog phrase "generic medical delivery payment"
 		
 mission "Rush Hospital [0]"
@@ -103,7 +103,7 @@ mission "Patients [0]"
 		dialog phrase "generic medical on visit"
 	on complete
 		payment
-		payment 22000 150
+		payment 22000 200
 		dialog phrase "generic medical delivery payment"
 		
 mission "Patients [1]"
@@ -124,7 +124,7 @@ mission "Patients [1]"
 		dialog phrase "generic medical on visit"
 	on complete
 		payment
-		payment 25000 150
+		payment 25000 200
 		dialog phrase "generic medical delivery payment"
 		
 mission "Quarantine [0]"
@@ -146,10 +146,10 @@ mission "Quarantine [0]"
 		dialog phrase "generic medical on visit"
 	on complete
 		payment
-		payment 22000 300
+		payment 22000 600
 		dialog phrase "generic medical delivery payment"
 		
-mission "Quarantine [0]"
+mission "Quarantine [1]"
 	name "Quarantined patient transport to <planet>"
 	job
 	repeat
@@ -168,17 +168,17 @@ mission "Quarantine [0]"
 		dialog phrase "generic medical on visit"
 	on complete
 		payment
-		payment 40000 300
+		payment 40000 600
 		dialog phrase "generic medical delivery payment"
 		
 mission "Outbreak [0]"
 	name "Outbreak on <planet>"
 	job
 	repeat
-	description "Bring <bunks> doctors and <tons> of supplies to help contain an outbreak on <destination> under quarantine. Payment is <payment>."
+	description "Bring <bunks> doctors and <tons> of supplies to help contain an outbreak on <destination>. Payment is <payment>."
 	passengers 5 25 .9
-	cargo "medical supplies" 10 50 .9
-	cargo "supplies" 10 50 .9
+	cargo "medical supplies" 10 50 .8
+	cargo "supplies" 10 50 .8
 	to offer
 		random < 75
 	on offer
@@ -192,5 +192,5 @@ mission "Outbreak [0]"
 		dialog phrase "generic medical on visit"
 	on complete
 		payment
-		payment 40000 300
+		payment 40000 600
 		dialog phrase "generic medical delivery payment"
