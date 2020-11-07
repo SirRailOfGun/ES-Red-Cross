@@ -30,7 +30,7 @@ planet "Follower"
 	outfitter "Triage"
 	
 planet "Pearl"
-	attributes hospital "good hospital"
+	attributes hospital "specialty hospital"
 	outfitter "Full Medical"
 	
 planet "Glory"

@@ -21,3 +21,98 @@
 # major hospital on rand/oblivion
 # trade routes to bring medical supplies to front lines
 # fast-packets to catch escape pods and bring injured ship crews to said hospitals
+
+mission "Republic Aid [0]"
+	name "Medical transport to <planet>"
+	job
+	repeat
+	description "Bring <cargo> to <destination> to treat wounded soldiers. Payment is <payment>."
+	cargo "Medical supplies" 20 50 .5
+	to offer
+		not "established field hospitals"
+		random < 75
+	source
+		government "Republic"
+	destination
+		government "Republic"
+		near government "Free Worlds" 1 3
+	on visit
+		dialog phrase "generic medical on visit"
+	on complete
+		"Republic Aid" ++
+		"good samaritan" ++
+		payment
+		payment 22000 200
+		dialog phrase "generic medical delivery payment"
+		
+mission "Republic Aid [1]"
+	name "Medical transport to <planet>"
+	job
+	repeat
+	description "Bring <bunks> doctors to <destination> to treat wounded soldiers. Payment is <payment>."
+	passengers 5 25 .5
+	to offer
+		not "established field hospitals"
+		random < 50
+	source
+		government "Republic"
+		attributes "hospital" "good hospital" "specialty hospital"
+	destination
+		government "Republic"
+		near government "Free Worlds" 1 3
+	on visit
+		dialog phrase "generic medical on visit"
+	on complete
+		"Republic Aid" ++
+		"good samaritan" ++
+		payment
+		payment 22000 200
+		dialog phrase "generic medical delivery payment"
+		
+mission "FW Aid [0]"
+	name "Medical transport to <planet>"
+	job
+	repeat
+	description "Bring <cargo> to <destination> to treat wounded soldiers. Payment is <payment>."
+	cargo "Medical supplies" 20 50 .5
+	to offer
+		not "established field hospitals"
+		random < 75
+	source
+		government "Free Worlds"
+	destination
+		government "Free Worlds"
+		near government "Republic" 1 3
+	on visit
+		dialog phrase "generic medical on visit"
+	on complete
+		"FW Aid" ++
+		"good samaritan" ++
+		payment
+		payment 22000 200
+		dialog phrase "generic medical delivery payment"
+		
+mission "FW Aid [1]"
+	name "Medical transport to <planet>"
+	job
+	repeat
+	description "Bring <bunks> doctors to <destination> to treat wounded soldiers. Payment is <payment>."
+	passengers 5 25 .5
+	to offer
+		not "established field hospitals"
+		random < 50
+	source
+		government "Free Worlds"
+		attributes "hospital" "good hospital" "specialty hospital"
+	destination
+		government "Free Worlds"
+		near government "Republic" 1 3
+	on visit
+		dialog phrase "generic medical on visit"
+	on complete
+		"FW Aid" ++
+		"good samaritan" ++
+		payment
+		payment 22000 200
+		dialog phrase "generic medical delivery payment"
+		

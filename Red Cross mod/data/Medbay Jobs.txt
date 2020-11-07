@@ -32,10 +32,12 @@ mission "Rush Hospital [0]"
 	source
 		government "Republic" "Free Worlds" "Syndicate" "Neutral" "Independent"
 	destination
+		distance 1 7
 		attributes "good hospital"
 	on visit
 		dialog phrase "generic medical on visit"
 	on complete
+		"good samaritan" ++
 		payment
 		payment 45000 900
 		dialog phrase "generic medical delivery payment"
@@ -55,15 +57,17 @@ mission "Rush Hospital [1]"
 	source
 		government "Republic" "Free Worlds" "Syndicate" "Neutral" "Independent"
 	destination
+		distance 1 7
 		attributes "good hospital"
 	on visit
 		dialog phrase "generic medical on visit"
 	on complete
+		"good samaritan" ++
 		payment
 		payment 45000 900
 		dialog phrase "generic medical delivery payment"
 		
-mission "Rush Hospital [0]"
+mission "Rush to Hospital [0]"
 	name "Very critical patient to <planet>"
 	job
 	repeat
@@ -77,10 +81,12 @@ mission "Rush Hospital [0]"
 	source
 		government "Republic" "Free Worlds" "Syndicate" "Neutral" "Independent"
 	destination
+		distance 1 7
 		attributes "good hospital"
 	on visit
 		dialog phrase "generic medical on visit"
 	on complete
+		"good samaritan" ++
 		payment
 		payment 90000 1200
 		dialog phrase "generic medical delivery payment"
@@ -98,10 +104,12 @@ mission "Patients [0]"
 	source
 		government "Republic" "Free Worlds" "Syndicate" "Neutral" "Independent"
 	destination
+		distance 1 7
 		attributes hospital
 	on visit
 		dialog phrase "generic medical on visit"
 	on complete
+		"good samaritan" ++
 		payment
 		payment 22000 200
 		dialog phrase "generic medical delivery payment"
@@ -119,10 +127,12 @@ mission "Patients [1]"
 	source
 		government "Republic" "Free Worlds" "Syndicate" "Neutral" "Independent"
 	destination
+		distance 1 7
 		attributes hospital
 	on visit
 		dialog phrase "generic medical on visit"
 	on complete
+		"good samaritan" ++
 		payment
 		payment 25000 200
 		dialog phrase "generic medical delivery payment"
@@ -140,11 +150,13 @@ mission "Quarantine [0]"
 	source
 		government "Republic" "Free Worlds" "Syndicate" "Neutral" "Independent"
 	destination
+		distance 1 7
 		attributes hospital "good hospital"
 		attributes "specialty hospital"
 	on visit
 		dialog phrase "generic medical on visit"
 	on complete
+		"good samaritan" ++
 		payment
 		payment 22000 600
 		dialog phrase "generic medical delivery payment"
@@ -162,11 +174,13 @@ mission "Quarantine [1]"
 	source
 		government "Republic" "Free Worlds" "Syndicate" "Neutral" "Independent"
 	destination
+		distance 1 7
 		attributes hospital "good hospital"
 		attributes "specialty hospital"
 	on visit
 		dialog phrase "generic medical on visit"
 	on complete
+		"good samaritan" ++
 		payment
 		payment 40000 600
 		dialog phrase "generic medical delivery payment"
@@ -184,6 +198,7 @@ mission "Outbreak [0]"
 	on offer
 		require "Medical Quarantine Stations"
 	source
+		distance 1 7
 		attributes hospital "good hospital"
 		attributes "specialty hospital"
 	destination
@@ -191,6 +206,7 @@ mission "Outbreak [0]"
 	on visit
 		dialog phrase "generic medical on visit"
 	on complete
+		"good samaritan" ++
 		payment
 		payment 40000 600
 		dialog phrase "generic medical delivery payment"
