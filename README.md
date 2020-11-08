@@ -9,6 +9,6 @@ Map changes and adjustments: appends relevant outfitters, as well as adding the 
 
 Medbay jobs: adds job board missions to transport patients to hospitals
 
-Merchant campaign hospital missions: currently just for brainstorming, will hold storyline missions about setting up hospitals on the frontlines and in FW space
+Merchant campaign hospital missions: has storyline missions about setting up hospitals on the frontlines and in FW space, and eventually building a hospital on Rand/Oblivion prior to the Pug invasion.
 
 Outfitters: defines outfitters with the new outfits in them.
