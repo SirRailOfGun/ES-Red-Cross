@@ -15,6 +15,9 @@
 
 # These missions will involve the player performing humanitarian missions during the civil war, giving unaligned players a way to get involved with major story points.
 
+# names
+# Dr. Paul Schaeffer
+# Dr. Timothy J. Ruthven
 
 # Mission ideas:
 # Field hospitals on border planets
@@ -29,7 +32,8 @@ mission "Republic Aid [0]"
 	description "Bring <cargo> to <destination> to treat wounded soldiers. Payment is <payment>."
 	cargo "Medical supplies" 20 50 .5
 	to offer
-		not "established field hospitals"
+		has "event: start of hostilities"
+		not "event: established field hospitals"
 		random < 75
 	source
 		government "Republic"
@@ -41,7 +45,6 @@ mission "Republic Aid [0]"
 	on complete
 		"Republic Aid" ++
 		"good samaritan" ++
-		payment
 		payment 22000 200
 		dialog phrase "generic medical delivery payment"
 		
@@ -52,7 +55,8 @@ mission "Republic Aid [1]"
 	description "Bring <bunks> doctors to <destination> to treat wounded soldiers. Payment is <payment>."
 	passengers 5 25 .5
 	to offer
-		not "established field hospitals"
+		has "event: start of hostilities"
+		not "event: established field hospitals"
 		random < 50
 	source
 		government "Republic"
@@ -65,7 +69,6 @@ mission "Republic Aid [1]"
 	on complete
 		"Republic Aid" ++
 		"good samaritan" ++
-		payment
 		payment 22000 200
 		dialog phrase "generic medical delivery payment"
 		
@@ -76,7 +79,8 @@ mission "FW Aid [0]"
 	description "Bring <cargo> to <destination> to treat wounded soldiers. Payment is <payment>."
 	cargo "Medical supplies" 20 50 .5
 	to offer
-		not "established field hospitals"
+		has "event: start of hostilities"
+		not "event: established field hospitals"
 		random < 75
 	source
 		government "Free Worlds"
@@ -88,7 +92,6 @@ mission "FW Aid [0]"
 	on complete
 		"FW Aid" ++
 		"good samaritan" ++
-		payment
 		payment 22000 200
 		dialog phrase "generic medical delivery payment"
 		
@@ -99,7 +102,8 @@ mission "FW Aid [1]"
 	description "Bring <bunks> doctors to <destination> to treat wounded soldiers. Payment is <payment>."
 	passengers 5 25 .5
 	to offer
-		not "established field hospitals"
+		has "event: start of hostilities"
+		not "event: established field hospitals"
 		random < 50
 	source
 		government "Free Worlds"
@@ -112,7 +116,87 @@ mission "FW Aid [1]"
 	on complete
 		"FW Aid" ++
 		"good samaritan" ++
-		payment
 		payment 22000 200
 		dialog phrase "generic medical delivery payment"
 		
+mission "Field Hospitals 1 - FW"
+	name "Field Hospitals"
+	description "Assist Dr. Schaeffer in creating field hospitals for the Free Worlds along the front lines"
+	passengers 1
+	cargo "medical equipment" 10
+	to offer
+		has "event: start of hostilities"
+		not "Field Hospitals 1 - Rep"
+		random < 33 + "good samaritan" + 2 * "FW Aid"
+	source
+		government "Free Worlds"
+		near Khonephros 2 7
+	destination
+		planet Deep
+	on offer
+		conversation
+			`As you are wandering the spaceport on <origin>, a man approaches you`
+			`	"Captain <first> <last>, correct?`
+			choice
+    			`   "That's me. What can I do for you?"`
+				goto "job"
+				`   "Nope, I'm their identical twin, <last> <first>"`
+			`	"Ah, I see. Jokes aside, I have a buisness proposition for you."`
+			label "job"
+			`	"I am attempting to provide humanitarian aid to the front lines of this conflict by constructing some field hospitals along the front lines."`
+			`	"Would you be willing to transport me and some supplies to <destination>?"`
+			choice
+    			`   "Sure!"`
+				goto yes
+				`   "Sorry, my cargo bay is full right now"`
+				defer
+				`	"Eww, doctors. No thank you!"`
+			`	The doctor looks rather taken back, but says nothing as he turns to leave.`
+			decline
+			label yes
+			`	"Great! I'll go get my things. Oh, I'm Dr. Paul Schaeffer, by the way"`
+	on complete
+		conversation
+			`Upon landing, Dr. Schaeffer says something to continue the mission, and pays you some money`
+		payment 50000
+
+mission "Field Hospitals 1 - Rep"
+	name "Field Hospitals"
+	description "Assist Dr. Schaeffer in creating field hospitals for the Republic along the front lines"
+	passengers 1
+	cargo "medical equipment" 10
+	to offer
+		has "event: start of hostilities"
+		not "Field Hospitals 1 - FW"
+		random < "good samaritan" + 2 * "Republic Aid"
+	source
+		government "Free Worlds"
+		near Khonephros 2 7
+	destination
+		planet Deep
+	on offer
+		conversation
+			`As you are wandering the spaceport on <origin>, a man approaches you`
+			`	"Captain <first> <last>, correct?`
+			choice
+    			`   "That's me. What can I do for you?"`
+				goto "job"
+				`   "Nope, I'm their identical twin, <last> <first>"`
+			`	"Ah, I see. Jokes aside, I have a buisness proposition for you."`
+			label "job"
+			`	"I am attempting to provide humanitarian aid to the front lines of this conflict by constructing some field hospitals along the front lines."`
+			`	"Would you be willing to transport me and some supplies to <destination>?"`
+			choice
+    			`   "Sure!"`
+				goto yes
+				`   "Sorry, my cargo bay is full right now"`
+				defer
+				`	"Eww, doctors. No thank you!"`
+			`	The doctor looks rather taken back, but says nothing as he turns to leave.`
+			decline
+			label yes
+			`	"Great! I'll go get my things. Oh, I'm Dr. Paul Schaeffer, by the way"`
+	on complete
+		conversation
+			`Upon landing, Dr. Schaeffer says something to continue the mission, and pays you some money`
+		payment 50000
